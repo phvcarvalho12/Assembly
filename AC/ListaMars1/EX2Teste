@@ -1,0 +1,40 @@
+#Pedro Henrique Vianna Carvalho
+#RA00333196
+
+jal lerTeclado  	# Chama função para ler
+la  $t1, 0($v0)		# Carrega o inteiro lido em $t0
+jal lerTeclado2		# Chama a função para ler o segundo numero
+la $t2, 0($v1)
+jal checar              # Vai para a função checar, dentro dela verifica se é maior, menor ou igual
+#j   fim			# Encerra o programa
+	
+lerTeclado:
+	la $v0, 4	# Código para ler um inteiro
+	syscall		# Executa a chamada do SO para ler	
+	jr $ra		# Volta para o lugar de onde foi chamado (no caso, jal lerTeclado)	
+		
+lerTeclado2:
+	la $v1, 5
+	syscall		
+	jr $ra		# Volta para o lugar de onde foi chamado 
+
+checar:
+    	bgt $t1, $t2, maior   # Se $t1 > $t2, vá para maior
+    	beq $t1, $t2, igual    # Se $t1 = $t2, vá para igual
+    	bgt $t2, $t1, menor   # Se $t2 > $t1, vá para menor
+    	jr $ra           # Volta para onde foi chamado
+
+maior:
+    	la $t0, 0($t1)              # O primeiro valor é maior
+    	jr $ra            # Ir para o fim da função
+
+igual:
+    	la $t0, 0($t1)              # Os valores são iguais
+    	jr $ra            # Ir para o fim da função
+    	
+menor:
+	la $t0, 0($t2)      # O segundo valor é maior
+	jr $ra
+#fim:
+	#li $a0, 10	# Código para encerrar o programa
+	#syscall		# Executa a chamada do SO para encerrar

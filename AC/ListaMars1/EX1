@@ -1,0 +1,20 @@
+#Pedro Henrique Vianna Carvalho
+#RA00333196
+
+li $t1, 3
+li $t2, 3		#soma dos digitos do ra
+li $t3, 3          	#estou atribuindo a cada variavel um numero do meu ra
+li $t4, 1		
+li $t5, 9
+li $t6, 6
+
+add $s0, $t1, $t2	  #estou somando 2 numeros e atribuindo a uma variavel
+add $s1, $t3, $t4         
+add $s2, $t5, $t6 
+
+add $s3, $s0, $s1	
+add $s4, $s3, $s2	#por ultimo consigo atribuir o valor correto da soma dos numeros totais do ra
+
+
+
+        

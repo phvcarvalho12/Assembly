@@ -1,0 +1,18 @@
+#Pedro Henrique Vianna Carvalho
+#RA00333196
+
+li $t1, 5
+li $t2, 7
+
+bgt $t1, $t2, maior   # Se $t1 > $t2, vá para maior
+beq $t1, $t2, igual    # Se $t1 = $t2, vá para igual
+bgt $t2, $t1, menor   # Se $t2 > $t1, vá para menor
+
+maior:
+	move $t0, $t1              # O primeiro valor é maior
+    	
+igual:
+	move $t0, $t1              # Os valores são iguais
+	
+menor:
+	move $t0, $t2      # O segundo valor é maior

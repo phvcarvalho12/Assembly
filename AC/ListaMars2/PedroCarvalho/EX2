@@ -1,0 +1,19 @@
+#Pedro Henrique Vianna Carvalho
+#RA00333196
+
+
+li $t1, 2      # Atribui o primeiro número
+li $t2, 6      # Atribui o segundo número
+    
+# Inicializa o resultado como 0
+li $t0, 0           # $t0 será usado para armazenar o resultado
+
+loop:
+    beq $t2, $zero, fim   # Se o segundo número for zero, termina o loop
+    
+    add $t4, $t4, $t1      # Adiciona o primeiro número ao resultado
+    subi $t2, $t2, 1       # Decrementa o segundo número
+    j loop
+    
+fim:
+	move $t0, $t4 

@@ -1,0 +1,16 @@
+#Pedro Henrique Vianna Carvalho
+#RA00333196
+
+li $t0, 5	#o valor declarado de x
+li $t1, 8	#o valor declarado de y
+
+beq $t0, $t1, igual	#se x for igual a y, vai para a função igual True
+bne $t0, $t1, igualF	#se x NÃO for igual a y
+
+igual:
+	li $t2, 2	#caso o x for igual a y, z recebe o valor 2
+	jr $ra		#volta para o lugar onde foi chamado
+	
+igualF:
+	li $t2, 3	#se o x NÃO for igual a y, recebe o valor 3
+	jr $ra		#volta para o lugar onde foi chamado

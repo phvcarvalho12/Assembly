@@ -1,0 +1,12 @@
+#Pedro Henrique Vianna Carvalho
+#RA00333196
+
+addi $t0, $zero, 268500992 # Armazena em t0 o endereco base da memoria de dados 
+
+li $t1, 9	#Inicializa o penultimo numero do meu ra
+li $t2, 6	#Inicializa o ultimo numero do meu ra
+
+add $t3, $t2, $t1	#Atribui a $t3 a soma dos ultimos digitos (9,6)
+
+sw $t0, ($t3)	#Coloca o valor da soma do endereço base da memoria de dados
+sw $t1, 16($t0)	#Coloca o valor da soma no endereço mais proximo da soma dos digitos no endereço base 
